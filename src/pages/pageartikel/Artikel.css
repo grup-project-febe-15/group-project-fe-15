@@ -1,0 +1,6 @@
+#banner-artikel {
+  background-image: url(../../assets/b-artikel.jpg);
+  background-size: cover;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
