@@ -4,6 +4,10 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import icon from "../../assets/icon.png";
 import { Link } from "react-router-dom";
 
+const myFooterStyle = {
+  textDecoration: "none",
+};
+
 const Footer = () => {
   return (
     <>
@@ -20,8 +24,7 @@ const Footer = () => {
                     <Link className="navbar-brand" to="/">
                       <img src={icon} alt="" height="50" />
                     </Link>
-                    <p>Cengkareng, Jakarta Barat</p>
-                    <p>DKI Jakarta 10270</p>
+                    <p>Icon Art merupakan sebuah platform website untuk memfasilitasi anak muda khususnya siswa SMA yang ingin mempelajari lebih lanjut mengenai Seni, khususnya dalam seni rupa.</p>
                   </div>
                   {/* Grid column */}
 
@@ -30,27 +33,27 @@ const Footer = () => {
                     {/* Links */}
                     <h6 className="text-uppercase fw-bold mb-4">Pages</h6>
                     <p>
-                      <Link to="/" className="text-reset">
+                      <Link to="/" className="text-reset" style={myFooterStyle}>
                         Home
                       </Link>
                     </p>
                     <p>
-                      <Link to="/artikel" className="text-reset">
+                      <Link to="/artikel" className="text-reset" style={myFooterStyle}>
                         Artikel
                       </Link>
                     </p>
                     <p>
-                      <Link to="/video" className="text-reset">
+                      <Link to="/video" className="text-reset" style={myFooterStyle}>
                         Video
                       </Link>
                     </p>
                     <p>
-                      <Link to="/material" className="text-reset">
+                      <Link to="/material" className="text-reset" style={myFooterStyle}>
                         Material
                       </Link>
                     </p>
                     <p>
-                      <Link to="/about" className="text-reset">
+                      <Link to="/about" className="text-reset" style={myFooterStyle}>
                         About Us
                       </Link>
                     </p>
@@ -83,13 +86,13 @@ const Footer = () => {
               {/* Right */}
               <div>
                 <a href="https://www.facebook.com" className="me-4 text-reset">
-                  <FaFacebook />
+                  <FaFacebook style={{ fontSize: "2rem" }} />
                 </a>
                 <a href="https://www.Twitter.com" className="me-4 text-reset">
-                  <FaTwitter />
+                  <FaTwitter style={{ fontSize: "2rem" }} />
                 </a>
                 <a href="https://www.instagram.com" className="me-4 text-reset">
-                  <FaInstagram />
+                  <FaInstagram style={{ fontSize: "2rem" }} />
                 </a>
               </div>
               {/* Right */}

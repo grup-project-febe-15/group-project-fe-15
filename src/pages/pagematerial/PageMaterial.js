@@ -2,33 +2,36 @@ import React from "react";
 import "./Material.css";
 import { useEffect, useState } from "react";
 import CardMaterial from "../../components/cardmaterial/CardMaterial";
+import { materialServices } from "../../services/materialServices";
 
 const PageMaterial = () => {
-  const url = "https://635538c3483f5d2df3afaee4.mockapi.io/articles";
-  const [artikel, setArtikel] = useState([]);
+  const [material, setMaterial] = useState([]);
 
-  const getDataArtikel = async () => {
-    const response = await fetch(url);
-    const dataArtikel = await response.json();
-    // console.log(dataArtikel);
-
-    setArtikel(dataArtikel);
-    // console.log(artikel);
+  const getDataMaterial = () => {
+    const data = materialServices.getMaterials();
+    data.then((value) => setMaterial(value));
   };
   useEffect(() => {
-    getDataArtikel();
-  });
+    getDataMaterial();
+  }, []);
 
   return (
     <>
+      <section id="banner-material">
+        <div className="container-fluid">
+          <div className="container text-light text-center fw-bold">
+            <h4 className="display-1 fw-bold">Material</h4>
+            <hr className="border border-2 border-dark mx-auto w-25 bg-dark" />
+            <h3 className="display-6">Cari Materi yang ingin kamu pelajari</h3>
+          </div>
+        </div>
+      </section>
       <section className="main pb-5">
         <div className="container">
-          <h1 className="p-4 text-center">Material</h1>
-          <hr className="border border-2 border-dark mx-auto w-25 bg-dark" />
-          <div id="artikels">
-            {artikel.map((item) => (
+          <div id="materials">
+            {material.map((item) => (
               // console.log(item.id)
-              <CardMaterial id={item.id} image={item.img} title={item.title} deskripsi={item.deskripsi} paragraph={item.paragraph} />
+              <CardMaterial id={item._id} image={item.pic} title={item.title} />
             ))}
           </div>
         </div>

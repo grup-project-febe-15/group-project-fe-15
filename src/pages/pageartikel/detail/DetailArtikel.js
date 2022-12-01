@@ -1,29 +1,28 @@
-import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import CardDetail from "../detail/carddetail/CardDetail";
+import { useParams } from "react-router-dom";
+import { artikelServices } from "../../../services/artikelServices";
 
 const DetailArtikel = () => {
-  const { id } = useParams();
-  const url = `https://635538c3483f5d2df3afaee4.mockapi.io/articles/${id}`;
-  const [detailartikel, setArtikel] = useState([]);
-
-  const getDataArtikel = async () => {
-    const response = await fetch(url);
-    const dataArtikel = await response.json();
-    setArtikel(dataArtikel);
-    // console.log(artikel);
+  const [detailartikel, setDetail] = useState();
+  const params = useParams();
+  const getDetailArtikels = () => {
+    artikelServices.getDetailArtikels(params._id).then((response) => {
+      setDetail(response);
+      console.log(response);
+    });
   };
-  console.log(detailartikel);
+
   useEffect(() => {
-    getDataArtikel();
+    getDetailArtikels();
   });
+  console.log(detailartikel);
+
   return (
     <>
       <section className="Detail Artikel">
         <div className="container">
-          {detailartikel?.map((item) => (
-            <CardDetail id={item.id} image={item.img} title={item.title} deskripsi={item.deskripsi} paragraph={item.paragraph} />
-          ))}
+          <CardDetail id={detailartikel?._id} image={detailartikel?.pic} title={detailartikel?.title} paragraph={detailartikel?.description} />
         </div>
       </section>
     </>

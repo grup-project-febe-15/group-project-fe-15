@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import icon from "../../assets/icon.png";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { FaBook, FaPhotoVideo } from "react-icons/fa";
 
 const Navbar = () => {
   return (
@@ -25,13 +26,17 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                   <Link to="/artikel" className="a-nav nav-link p-3">
-                    Article
+                    Articles
                   </Link>
                 </li>
                 <li className="nav-item">
                   <NavDropdown title="Course" className="nav-dropdown a-nav nav-link">
-                    <NavDropdown.Item href="/video">Video</NavDropdown.Item>
-                    <NavDropdown.Item href="/material">Material</NavDropdown.Item>
+                    <NavDropdown.Item href="/video">
+                      <FaPhotoVideo /> Videos
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/material">
+                      <FaBook /> Materials
+                    </NavDropdown.Item>
                   </NavDropdown>
                 </li>
                 <li className="nav-item">
@@ -40,12 +45,30 @@ const Navbar = () => {
                   </Link>
                 </li>
               </ul>
-              <Link to="/masuk" className="a-nav nav-link p-3">
-                Masuk
-              </Link>
-              <Link to="/daftar" type="button" className="btn btn-primary">
-                Daftar
-              </Link>
+              {localStorage.getItem("token") ? (
+                <>
+                  <Link
+                    to="/daftar"
+                    type="button"
+                    className="a-nav nav-link p-3 mx-3"
+                    onClick={() => {
+                      localStorage.clear();
+                      window.location.href = "/masuk";
+                    }}
+                  >
+                    Logout
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/masuk" className="a-nav nav-link p-3 mx-3">
+                    Sign In
+                  </Link>
+                  <Link to="/daftar" type="button" className="btn btn-primary">
+                    Sign Up
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </nav>

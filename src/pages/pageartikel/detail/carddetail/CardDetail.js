@@ -4,21 +4,21 @@ import "./CardDetail.css";
 function CardDetail(props) {
   return (
     <>
-      <div className="row px-5">
-        <img id="img" className="img-fluid" src={props.img} alt="" />
-      </div>
-      <div className="title px-5 pt-5 pb-3">
-        <div>{props.title}</div>
-      </div>
-      <div className="row px-5">
-        <div className="paragraph py-3">
-          <p>{props.paragraph}</p>
+      <div>
+        <div className="row px-5 py-3">
+          <img id="img" className="img-fluid" src={props.image} alt={props.title} />
         </div>
-        <Link to="/artikel">
-          <button type="button" className="btn btn-primary mb-3">
-            KEMBALI
-          </button>
-        </Link>
+        <div className="title px-5 pt-5 pb-3 fw-bold fs-1">
+          <div>{props.title}</div>
+        </div>
+        <div className="row px-5">
+          <div dangerouslySetInnerHTML={{ __html: props.paragraph }} />
+          <Link to="/artikel">
+            <button type="button" className="btn btn-primary mb-3 mt-2">
+              KEMBALI
+            </button>
+          </Link>
+        </div>
       </div>
     </>
   );

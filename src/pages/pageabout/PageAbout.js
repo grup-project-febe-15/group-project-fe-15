@@ -143,6 +143,84 @@ const PageAbout = () => {
                 </div>
               </div>
             </div>
+            <div className="col-md-4">
+              <div className="card">
+                <div className="card-body text-center text-black">
+                  <h3 class="mb-2 username">Adi Mas Setiawan</h3>
+                  <h4>Back-End</h4>
+                  <h6>Solo, Jawa Tengah</h6>
+                  <div className="mb-4 py-2">
+                    <a href="https://github.com/Adimas88888">
+                      <button type="button" className="btn btn-outline-primary btn-floating">
+                        <FaGithub size={20} />
+                      </button>
+                    </a>
+                    <a href="https://www.linkedin.com/in/adi-mas-setiawan-319275248">
+                      <button type="button" className="btn btn-outline-primary btn-floating">
+                        <FaLinkedin />
+                      </button>
+                    </a>
+                    <a href="https://www.instagram.com/adimass99?r=nametag">
+                      <button type="button" className="btn btn-outline-primary btn-floating">
+                        <FaInstagram />
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card">
+                <div className="card-body text-center text-black">
+                  <h3 class="mb-2 username">Yohanes Anjar Dewantara</h3>
+                  <h4>Back-End</h4>
+                  <h6>Bekasi, Jawa Barat</h6>
+                  <div className="mb-4 py-2">
+                    <a href="https://github.com/yohanesanjar">
+                      <button type="button" className="btn btn-outline-primary btn-floating">
+                        <FaGithub size={20} />
+                      </button>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yohanesanjar/">
+                      <button type="button" className="btn btn-outline-primary btn-floating">
+                        <FaLinkedin />
+                      </button>
+                    </a>
+                    <a href=" https://instagram.com/___yohanesanjar">
+                      <button type="button" className="btn btn-outline-primary btn-floating">
+                        <FaInstagram />
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card">
+                <div className="card-body text-center text-black">
+                  <h3 className="mb-2 username">Yunly Pakh</h3>
+                  <h4>Back-End</h4>
+                  <h6>NTT</h6>
+                  <div className="mb-4 py-2">
+                    <a href="https://github.com/yunly-pakh">
+                      <button type="button" className="btn btn-outline-primary btn-floating">
+                        <FaGithub size={20} />
+                      </button>
+                    </a>
+                    <a href="https://github.com/yunly-pakh">
+                      <button type="button" className="btn btn-outline-primary btn-floating">
+                        <FaLinkedin />
+                      </button>
+                    </a>
+                    <a href="https://instagram.com/yunlypakh_">
+                      <button type="button" className="btn btn-outline-primary btn-floating">
+                        <FaInstagram />
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

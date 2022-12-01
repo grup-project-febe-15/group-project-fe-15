@@ -1,34 +1,36 @@
 import React from "react";
 import "./Artikel.css";
 import CardArtikel from "../../components/cardartikel/CardArtikel";
+import { artikelServices } from "../../services/artikelServices";
 import { useEffect, useState } from "react";
 
 const PageArtikel = () => {
-  const url = "https://635538c3483f5d2df3afaee4.mockapi.io/articles";
   const [artikel, setArtikel] = useState([]);
 
-  const getDataArtikel = async () => {
-    const response = await fetch(url);
-    const dataArtikel = await response.json();
-    // console.log(dataArtikel);
-
-    setArtikel(dataArtikel);
-    // console.log(artikel);
+  const getDataArtikel = () => {
+    const data = artikelServices.getArtikels();
+    data.then((value) => setArtikel(value));
   };
   useEffect(() => {
     getDataArtikel();
-  });
+  }, []);
 
   return (
     <>
+      <section id="banner-artikel">
+        <div className="container-fluid">
+          <div className="container text-light text-center fw-bold">
+            <h4 className="display-1 fw-bold">Artikel</h4>
+            <hr className="border border-2 border-dark mx-auto w-25 bg-dark" />
+            <h3 className="display-6">Cari artikel yang ingin kamu baca</h3>
+          </div>
+        </div>
+      </section>
       <section className="main pb-5">
         <div className="container">
-          <h1 className="p-4 text-center">Artikel</h1>
-          <hr className="border border-2 border-dark mx-auto w-25 bg-dark" />
           <div id="artikels">
             {artikel.map((item) => (
-              // console.log(item.id)
-              <CardArtikel id={item.id} image={item.img} title={item.title} deskripsi={item.deskripsi} paragraph={item.paragraph} />
+              <CardArtikel id={item._id} image={item.pic} title={item.title} />
             ))}
           </div>
         </div>

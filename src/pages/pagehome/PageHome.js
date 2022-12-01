@@ -9,8 +9,10 @@ const PageHome = () => {
       <section id="banner">
         <div className="container-fluid">
           <div className="container text-center">
-            <h4 className="display-1">Temukan Minat dan Bakatmu!</h4>
-            <h3 className="display-6">Pelajari lebih lanjut mengenai Seni Rupa!</h3>
+            <h4 className="display-1 p-1">Temukan Minat dan Bakatmu!</h4>
+            <h3 className="display-6" p-1>
+              Pelajari lebih lanjut mengenai Seni Rupa!
+            </h3>
           </div>
         </div>
       </section>
@@ -54,7 +56,7 @@ const PageHome = () => {
               <div className="col-md-8">
                 <div className="card-body-ajakan mx-auto text-center pt-5">
                   <h2>TUNGGU APA LAGI AYO GABUNG SEKARANG</h2>
-                  <a href="/assets/signup.html">
+                  <a href="/daftar">
                     <button type="button" className="btn btn-primary btn-lg mt-5">
                       LET'S JOIN US
                     </button>
